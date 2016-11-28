@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>TodoApp</title>
+	<style>
+/*
+		.error{
+			color: magenta;
+		}
+*/
+		table{
+			background: darkseagreen;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<input type="text" placeholder="Enter todo here" id="todo">
+	<span class="error" id="errorBox"></span>
+	<button onclick="addTodo()">Add Todo</button>
+	<hr/>
+	<button onclick="deleteTodos('todoTable')">Delete Todos</button>
+	<table border="1" width="80%" cellpadding="5" cellspacing="5">
+		<thead>
+			<tr>
+				<th>Todo</th>
+				<th>Select</th>
+			</tr>
+		</thead>
+		<tbody id="todoTable">
+			<tr>
+				<td>Watch movie</td>
+				<td><input type="checkbox" name="chkbx"></td>
+			</tr>
+		</tbody>
+		<thead>
+			<tr>
+				<th>Todo</th>
+				<th>Select</th>
+			</tr>
+		</thead>
+	</table>
+	
+	<script>
+		function addTodo(){
+			var todoText = document.getElementById('todo').value;
+			document.getElementById('todo').value = "";
+			var errorBox = document.getElementById('errorBox');
+			if(todoText.trim().length>0){
+				console.log("add todo in table")
+				errorBox.innerHTML = "";
+				console.log(todoText);
+				var table = document.getElementById('todoTable');
+				var newRowIndex = table.rows.length;
+				var row = table.insertRow(newRowIndex);
+				//insert first cell, todoText
+				var firstCell = row.insertCell(0);
+				firstCell.innerHTML = todoText;
+//				create secondCell
+				var secondCell = row.insertCell(1);
+				var chkElement = document.createElement('input');
+				chkElement.type = 'checkbox';
+				chkElement.name = "chkbx";
+				secondCell.appendChild(chkElement);
+			} else {
+				console.log("blank string");
+				errorBox.innerHTML = "Enter some todo";
+				errorBox.style.color = 'red';
+			}
+		}
+		
+		function deleteTodos(tableId){
+			var table = document.getElementById(tableId);
+			var rowsCount = table.rows.length;
+			for(var i=0; i< rowsCount;i++){
+				var row = table.rows[i];
+				var chkbx = row.cells[1].childNodes[0];
+				console.log(chkbx);
+				if(chkbx && chkbx.checked){
+					table.deleteRow(i);
+					rowsCount--;
+					i--;
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>

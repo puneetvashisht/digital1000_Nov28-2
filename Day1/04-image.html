@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Change Image</title>
+	<style>
+		#myImage{
+			display: inline;
+			border: 2px solid black;
+			border-radius: 25px;
+		}
+	</style>
+</head>
+<body>
+	<img onclick="changeImg()" src="http://lorempixel.com/300/300/" alt="" id="myImage">
+	
+	<button>Click</button>
+<!--	<img src="http://lorempixel.com/300/300/sports/1/" alt="" id="myImage">-->
+	<script>
+//		var image = document.getElementsByTagName('img')[0]
+		var image = document.getElementById('myImage');
+		var index = 1;
+		function changeImg(){
+			console.log('image change request');
+			image.src = "http://lorempixel.com/300/300/sports/"+index+"/";
+			index++;
+			if(index>4){
+				index = 1;
+			}
+		}
+	</script>
+</body>
+</html>
