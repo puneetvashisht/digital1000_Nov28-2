@@ -25,4 +25,6 @@ Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=s
 			load
 			unload
 	callback
+	jquery
+		basic
 			
