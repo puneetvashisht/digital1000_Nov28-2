@@ -1,10 +1,28 @@
-PuneetVashisht@gmail.com
-https://github.com/puneetvashisht/digital1000_Nov28-2
+Email: PuneetVashisht@gmail.com
+Github: https://github.com/puneetvashisht/digital1000_Nov28-2
+Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=sharing
 
 1. JavaScript
 	Browser - Chrome
 		You can write js in chrome
 	IDE - Brackets
 	Basic js
+		variables
+		functions
 		DOM 
+			table
 		Clock
+		validation
+		Events
+			onclick = "func()"
+			onmouseenter
+			onmouseleave
+			focus
+			blur
+			dblclick
+			scroll
+			resize
+			load
+			unload
+	callback
+			
