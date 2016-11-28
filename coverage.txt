@@ -1,11 +1,10 @@
 PuneetVashisht@gmail.com
+https://github.com/puneetvashisht/digital1000_Nov28-2
 
 1. JavaScript
-
-2. Jquery
-
-3. AngularJS
-
-4. NodeJs
-	Mongodb
-
+	Browser - Chrome
+		You can write js in chrome
+	IDE - Brackets
+	Basic js
+		DOM 
+		Clock
