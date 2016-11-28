@@ -1,0 +1,11 @@
+PuneetVashisht@gmail.com
+
+1. JavaScript
+
+2. Jquery
+
+3. AngularJS
+
+4. NodeJs
+	Mongodb
+
