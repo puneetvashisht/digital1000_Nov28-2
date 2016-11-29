@@ -1,0 +1,38 @@
+<html>
+<head>
+	<style>
+		div{
+			margin: 20px;
+			padding: 15px;
+			border: 2px solid red;
+		}
+		p{
+			border: 1px solid black;
+		}
+	</style>
+	<script src="lib/jquery/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var childDiv = $("<div>");
+			childDiv.append($('<p>').html("First para"))
+			childDiv.append($('<p>').html("Second para"))
+			childDiv.append($('<p>').html("Third para"))
+			childDiv.append($('<p>').html("Fourth para"))
+			$(childDiv).appendTo($('#outerDiv'));
+		
+			var totalP = $("#outerDiv>div").find('p').length;
+			console.log(totalP);
+			
+			
+			$("#outerDiv>div").find('p:even').css({"color":"red"})
+			$("#outerDiv>div").find('p:odd').css({"color":"blue"})
+			
+			$("#outerDiv>div").find('p:nth-child(3)').html("Found this element in jquery")
+		});
+
+	</script>
+</head>
+<body>
+	<div id="outerDiv"></div>
+</body>
+</html>

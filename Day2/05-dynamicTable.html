@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>TodoApp</title>
+	<style>
+/*
+		.error{
+			color: magenta;
+		}
+*/
+	</style>
+</head>
+<body>
+	<input type="text" placeholder="Enter todo here" id="todo">
+	<span class="error" id="errorBox"></span>
+	<button>Add Todo</button>
+	<hr/>
+	<button onclick="deleteTodos('todoTable')">Delete Todos</button>
+	<table border="1" width="80%" cellpadding="5" cellspacing="5">
+		<thead>
+			<tr>
+				<th>Todo</th>
+				<th>Select</th>
+			</tr>
+		</thead>
+		<tbody id="todoTable">
+			<tr>
+				<td>Watch movie</td>
+				<td><input type="checkbox" name="chkbx"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Nested Elements</title>
+	<script src="lib/jquery/jquery-3.1.1.min.js"></script>
+	<style>
+		div{
+			border: 2px solid red;
+			margin: 20px;
+			padding: 15px;
+		}
+		
+		.para{
+			color: white;
+			background: black;
+			text-align: center;
+		}
+	</style>
+	
+	<script>
+		$(document).ready(function(){
+//			$('p').addClass('para');
+//			$('div#inner p').addClass('para');
+//			$('div#outer p').addClass('para');
+			
+			
+			$('div#outer > p').addClass('para');
+		})
+	</script>
+</head>
+<body>
+	<p>In Body</p>
+	<div id="outer">
+		<p>In outer</p>
+		<div id="inner">
+			<p>In inner</p>
+		</div>
+	</div>
+</body>
+</html>

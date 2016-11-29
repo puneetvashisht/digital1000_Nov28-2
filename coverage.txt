@@ -26,8 +26,9 @@ Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=s
 			unload
 	callback
 2.	jquery
-		basic
-		selectors
+		basic - syntax
+		selectors/events
+			mouseenter, mouseleave, bind
 		nestedSelectors
 		dynamic elements
 		validation
