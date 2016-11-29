@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Selectors/Events Demo</title>
+	<script src="lib/jquery/jquery-3.1.1.min.js"></script>
+	<style>
+		.head{
+			border: 2px solid black;
+			border-radius: 10px;
+			color: cornflowerblue;
+			text-align: center;
+			display: block;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("#title, p").addClass("head");
+			
+			$(".title").click(function(){
+				console.log("Text is "+$(this).html())
+			})
+			
+			$('h1').mouseenter(function(){
+				console.log("Mouseenter")
+			})
+			$('h1').mouseleave(function(){
+				console.log("Mouseleave")
+			})
+		})
+	</script>
+</head>
+<body>
+	<h1 id="title">Head one</h1>
+	<h1 class="title">Head two</h1>
+	<h1>Head three</h1>
+	<p>Para text</p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Selectors/Events Demo</title>
+	<script src="lib/jquery/jquery-3.1.1.min.js"></script>
+	<style>
+/*		.title{*/
+		#title{
+			border: 2px solid black;
+			border-radius: 10px;
+			color: cornflowerblue;
+			text-align: center;
+		}
+		.idCss{
+			color: yello;
+			background: blue;
+			border: 1px dashed darkseagreen;
+		}
+		.pwdCss{
+			border: 2px solid red;
+			background: black;
+			color: white;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('#title').click(function(){
+				console.log("clicked head element")
+			});
+			
+			$(':text').focusin(function(){
+				$(':text').addClass("idCss");
+			})
+			$(':text').focusout(function(){
+				$(this).removeClass("idCss");
+			})
+			$(':password').focusin(function(){
+				$(this).addClass("pwdCss");
+			})
+			$(':password').focusout(function(){
+				$(this).removeClass("pwdCss");
+			})
+		})
+	</script>
+</head>
+<body>
+	<h1 id="title">Login Page</h1>
+	<table>
+		<tr>
+			<td>Userid</td>
+			<td><input type="text" placeholder="Enter userid"></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" placeholder="Enter password"></td>
+		</tr>
+	</table>
+</body>
+</html>
