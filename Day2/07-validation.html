@@ -2,29 +2,7 @@
 <head>
 	<title>Validation Demo</title>
 	<script src="lib/jquery/jquery-3.1.1.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$(':submit').click(function(){
-				var hasError = true;
-				var user = $(':text').val().trim();
-				var regEx = /^[a-zA-Z]+$/ 
-				if(user.length === 0){
-					hasError = true;
-					$('#usernameError').html("Enter some name").css({'color':'red'})
-				}
-				else if(!regEx.test(user)){
-					hasError = true;
-					$('#usernameError').html("Enter valid name").css({'color':'red'})
-				}
-				else {
-					hasError = false;
-					$('#usernameError').html("");
-				}
-				return !hasError;
-//				return false;
-			})
-		})
-	</script>
+	<script src="lib/js/07-validation.js"></script>
 </head>
 <body>
 	<h1>User details</h1>
@@ -34,7 +12,7 @@
 		<span id="usernameError"></span>
 		<br/>
 		<label>Password: </label>
-		<input type="password" name="pwd" placeholder="Enter your password"/>
+		<input type="password" name="pwd" placeholder="Enter your password" required/>
 		<br/>
 		<input type="submit" value="Submit" />
 	</form>
