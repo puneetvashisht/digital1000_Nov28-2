@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Animation Demo</title>
+	<script src="lib/jquery/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#hideBtn').click(function(){
+				$('img').hide(1000);
+			});
+			$('#showBtn').click(function(){
+				$('img').show(1000);
+			});
+			$('#toggleBtn').click(function(){
+				$('img').toggle(2000);
+			});
+			$('#animationBtn').click(function(){
+				$('img').animate({width:100, height: 85}, 5000);
+				$('img').animate({width:200, height: 140}, 5000);
+				$('img').animate({width:300, height: 190}, 5000, function(){
+					$('img').css({'border':'1px solid black', 'border-radius':'15px'})
+				});
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<button id="hideBtn">Hide</button>
+	<button id="showBtn">Show</button>
+	<button id="toggleBtn">Toggle</button>
+	<button id="animationBtn">Animation</button>
+	<hr/>
+	<img src="./images/Superman-3D-Art.jpg" alt="" width="400" height="250">
+</body>
+</html>
