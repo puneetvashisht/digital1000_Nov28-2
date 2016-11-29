@@ -1,7 +1,8 @@
 $(document).ready(function(){
-			$(':submit').click(function(){
+			$('#submit').click(function(){
 				var hasError = true;
 				var user = $(':text').val().trim();
+				var pwd = $(':password').val().trim();
 				var regEx = /^[a-zA-Z]+$/ 
 				if(user.length === 0){
 					hasError = true;
@@ -14,8 +15,16 @@ $(document).ready(function(){
 				else {
 					hasError = false;
 					$('#usernameError').html("");
+					$.ajax({
+						type:'get',
+						url: './../dummyServer/loginUser.json',
+						data: {username: user, password: pwd},
+						success: function(data){
+							console.log(data)
+						}
+					});
 				}
-				return !hasError;
-//				return false;
+//				return !hasError;
+				return false;
 			})
 		})

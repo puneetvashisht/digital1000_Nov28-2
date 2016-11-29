@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>Ajax Demo</title>
+	<style>
+		table{
+			border: 1px solid black;
+			width: 80%;
+			margin: 10px auto;
+		}
+	</style>
+	<script src="lib/jquery/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#getData').click(function(){
+				console.log("sending request for data");
+				$.ajax({
+					type: 'get',
+					url: './../dummyServer/emp.json',
+					success: function(res){
+						console.log('response is here');
+						console.log(res.emps);
+						showData(res.emps);
+					},
+					error: function(xhr, message, status){
+						console.log("some error on server");
+						console.log(xhr)
+						console.log(message)
+						console.log(status)
+					}
+				});
+			});
+			
+			function showData(emps){
+				for(var i=0;i<emps.length;i++){
+					console.log(emps[i]);
+					var row = $('<tr>');
+					row.append("<td>"+emps[i].name+"</td>");
+					row.append("<td>"+emps[i].empId+"</td>");
+					row.append("<td>"+emps[i].salary+"</td>");
+					$(row).appendTo($('#tableBody'));
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+	<button id="getData">Load Data</button>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>EmpId</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody id="tableBody">
+			<tr>
+				<td>Williams</td>
+				<td>Niit0314</td>
+				<td>500000</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

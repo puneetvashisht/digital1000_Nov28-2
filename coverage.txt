@@ -31,6 +31,6 @@ Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=s
 			mouseenter, mouseleave, bind
 		nestedSelectors
 		dynamic elements
-		validation
 		animation
+		validation
 		ajax
