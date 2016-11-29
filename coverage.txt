@@ -34,3 +34,18 @@ Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=s
 		animation
 		validation
 		ajax
+	
+	
+	Application
+		1. Show item table on the page. Item data is coming from the server/json.
+		2. odd number of rows should have light green(darkseagreen) background
+		3. even number of rows should have background as cornflowerblue
+		4. On the same page, user can fill new item in the form and add to table.
+		5. Only valid data should be appended to table row.
+	
+	
+	
+	
+	
+	
+	

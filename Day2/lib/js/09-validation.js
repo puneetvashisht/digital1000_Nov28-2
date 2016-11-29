@@ -17,8 +17,8 @@ $(document).ready(function(){
 					$('#usernameError').html("");
 					$.ajax({
 						type:'get',
-						url: './../dummyServer/loginUser.json',
-						data: {username: user, password: pwd},
+						url: './../dummyServer/loginUser.json?username='+user,
+//						data: {username: user, password: pwd},
 						success: function(data){
 							console.log(data)
 						}
