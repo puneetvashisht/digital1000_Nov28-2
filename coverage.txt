@@ -42,6 +42,7 @@ Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=s
 		3. even number of rows should have background as cornflowerblue
 		4. On the same page, user can fill new item in the form and add to table.
 		5. Only valid data should be appended to table row.
+		6. Upload it to shared link before 5 PM
 	
 	
 	
