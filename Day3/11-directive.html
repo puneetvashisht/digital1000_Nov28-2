@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>Filter Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('app', []);
+		app.controller("ctrl", function($scope){
+			$scope.show = function(){
+				console.log("clicked")
+			}
+		});
+	</script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+	<h1>Built-in Directives</h1>
+	<h2>ng-disabled</h2>
+	<input type="text" ng-model="someProperty">
+	<button ng-click="show()" ng-disabled="!someProperty">Send</button>
+	<hr/>
+	<h2>ng-readonly</h2>
+	<input type="text" ng-model="someProperty" ng-readonly="true">
+	<hr/>
+	<h2>ng-checked</h2>
+	<input type="checkbox" id="checkbox" ng-checked="someChkProperty" ng-init="someChkProperty=true" ng-model="someChkProperty"><label for="checkbox">SomeChkProperty: {{someChkProperty}}</label>
+	
+	<h2>ng-selected</h2>
+	<input type="checkbox" id="gender" ng-checked="isMale" ng-model="isMale"><label for="gender">Change your gender</label>
+	<select ng-disabled="true">
+		<option>Male</option>
+		<option ng-selected="isMale">Female</option>
+	</select>
+	
+	<h2>ng-show | ng-hide</h2>
+	<input type="number" min="0" max="100" placeholder="Enter your age" ng-model="age"/>
+	<p ng-show="age<18">Minor</p>
+	<p ng-hide="age<18">Major</p>
+	
+	<h2>ng-if</h2>
+	<p ng-if="5>6">5 is greater than 6</p>
+	<p ng-if="5<6">5 is less than 6</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

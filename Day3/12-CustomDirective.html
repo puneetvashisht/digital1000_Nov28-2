@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Filter Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('app', []);
+		app.directive("user", function(){
+			return {
+				template: "<div><h2>Username: <mark>{{user.name}}</mark></h2><h2>Age: <mark>{{user.age}}</mark></h2></div>",
+//				templateUrl: "./template/12-userTemp.html",
+				restrict: "EAC"
+			}
+		})
+		app.controller("ctrl", function($scope){
+			$scope.user = {
+				name: "Puneet",
+				age: 34,
+				gender: "Male"
+			}
+		});
+	</script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+	<h2>Custom Element</h2>
+	<user></user>
+	<span user></span>
+	<div class="user"></div>
+</body>
+</html>
+

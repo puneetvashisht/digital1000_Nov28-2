@@ -74,27 +74,17 @@ Download:
 	Service/Factory
 	Filter
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	Directive
+		ng-repeat
+		ng-click
 
-
-
-
-
-
-
-
-
+		ng-disabled
+		ng-readonly
+		ng-checked
+		ng-selected
+		ng-show | ng-hide | ng-if
+		
+		custom directive
+			element
+			attribute
+			class

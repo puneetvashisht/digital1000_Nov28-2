@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Demo</title>
+	<style>
+		div{
+			border: 2px solid red;
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('myApp', []);
+		//$rootScope is available per module
+		//$scope is availble per controller
+		app.controller('ctrl_1', function($scope, $rootScope){
+			console.log("in ctrl_1");
+			$scope.show = function(){
+				console.log("clicked");
+			}
+			
+			$scope.show();
+		});
+	</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="ctrl_1" ng-click="show()">
+	</div>
+</body>
+</html>

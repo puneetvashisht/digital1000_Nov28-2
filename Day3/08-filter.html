@@ -30,7 +30,7 @@
 	</ul>
 	<h2>OrderBy Filter</h2>
 	<ul ng-repeat="emp in emps | orderBy:'salary'">
-		<li>{{emp | json}}</li>
+		<li ng-if="emp.salary<500000">{{emp | json}}</li>
 	</ul>
 </body>
 </html>
