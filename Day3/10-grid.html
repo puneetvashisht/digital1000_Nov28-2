@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Grid Demo</title>
+	<title>Searchable Grid Demo</title>
 	<script src="lib/angular/angular.min.js"></script>
 	<script>
 		var app = angular.module('app', []);
@@ -16,17 +16,25 @@
 	</script>
 </head>
 <body ng-app="app" ng-controller="ctrl">
-	<h1>Custom Filters</h1>
-	<h2>Name: {{name}}</h2>
-	<h2>Capitalize: {{name | capitalize}}</h2>
-	<hr/>
-	<h2>Json Filter</h2>
-	<h2>{{"Employees data is: "+emps}}</h2>
-	<h2>{{"Employees data is: "+(emps|json)}}</h2>
-	<hr/>
-	<h2>CustomLogic Filter</h2>
-	<ul ng-repeat="emp in emps | custom">
-		<li>{{emp | json}}</li>
-	</ul>
+	<input type="text" placeholder="Search by name" ng-model="search.name"/>
+	<input type="text" placeholder="Search by id" ng-model="search.empId"/>
+	<input type="text" placeholder="Search by salary" ng-model="search.salary"/>
+	
+	<input type="text" placeholder="Search by anything" ng-model="search.$"/>
+	<table border="1" width="60%">
+		<tr>
+			<td>S.No</td>
+			<td>Name</td>
+			<td>EmpId</td>
+			<td>Salary</td>
+		</tr>
+		<tr ng-repeat="emp in emps | filter:search">
+			<td>{{$index+1}}</td>
+			<td>{{emp.name}}</td>
+			<td>{{emp.empId}}</td>
+			<td>{{emp.salary}}</td>
+		</tr>
+	</table>
+
 </body>
 </html>
