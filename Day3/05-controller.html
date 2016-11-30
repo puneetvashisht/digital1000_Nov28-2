@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('myApp', []);
+		//$rootScope is available per module
+		//$scope is availble per controller
+		app.controller('ctrl_1', function($scope, $rootScope){
+			$rootScope.name = "puneet";
+			$scope.username = "Puneet";
+		});
+		app.controller('ctrl_2',['$rootScope', '$scope', function(rs, s){
+			rs.name = "Vishal";
+			s.username = "Vishal";
+		}]);
+	</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="ctrl_1">
+		Name: <input type="text" ng-model="name">
+		UserName: <input type="text" ng-model="username">
+		<h1>Name: {{name}}</h1>
+		<h1>UserName: {{username}}</h1>
+	</div>
+	<hr/>
+	<div ng-controller="ctrl_2">
+		<h1>Name: {{name}}</h1>
+		<h1>UserName: {{username}}</h1>
+	</div>
+</body>
+</html>

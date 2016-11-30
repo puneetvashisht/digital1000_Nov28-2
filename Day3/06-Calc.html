@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Calc Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('CalModule' , []);
+		
+		
+		app.controller('scientificCtrl', function($scope){
+			$scope.square = function(){
+				$scope.output = $scope.num*$scope.num;
+			}
+		})
+		app.controller('basicCtrl', function($scope, $rootScope){
+			$rootScope.add = function(fn, sn){
+				$rootScope.output = fn + sn;
+			}
+			$scope.mul = function(){
+				$scope.output = $scope.fn * $scope.sn;
+			}
+		});
+	</script>
+</head>
+<body ng-app="CalModule">
+	<div ng-controller="basicCtrl">
+		<h1>Basic</h1>
+		FirstNumber: <input type="number" ng-model="fn" />
+		SecondNumber: <input type="number" ng-model="sn" />
+		<hr/>
+		<button ng-click="add(fn, sn)">Add</button>
+		<button ng-click="mul()">Mul</button>
+		<h3>Result: {{output}}</h3>
+	</div>
+		<hr/>
+	<div ng-controller="scientificCtrl">
+		<h1>Scientific</h1>
+		<input type="number" ng-model="num"/><button ng-click="square()">GetSquare</button>
+		<h3>Square : {{output}}</h3>
+		<input type="number" ng-model="fnum" />
+		<input type="number" ng-model="snum" />
+		<br/>
+		<button ng-click="add(fnum, snum)">Add</button>
+		
+	</div>
+</body>
+</html>

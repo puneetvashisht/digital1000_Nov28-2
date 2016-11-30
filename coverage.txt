@@ -44,6 +44,37 @@ Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=s
 		5. Only valid data should be appended to table row.
 		6. Upload it to shared link before 5 PM
 	
+3. AngularJS
+	Syntax : Jquery vs Angular
+	Expression
+	
+	one rootScope per module/app
+	one scope per controller
+	n number of controllers can be in a module
+	
+	Try it: 
+		write a module
+			controller('parent'): scope.fn
+			controller('child'): ln
+
+		ng-app
+			ng-controller="parent"	
+				{{fn + ln}}
+				ng-controller="child"	
+					{{fn + ln}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
