@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Demo</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('myApp', []);
+		app.service('UserService', function(){
+			var user = {
+				name: '',
+				pwd: '',
+				age: 18,
+				gender: '',
+				contact: {
+					email: '',
+					phone: '',
+					address: ''
+				}
+			};
+			return user;
+		})
+		app.controller('RegCtrl', function($scope, UserService){
+			$scope.shareData = function(){
+				UserService.name = $scope.name;
+				UserService.contact.email = $scope.email;
+				UserService.age = $scope.age;
+			}
+		});
+		app.controller('MyAccountCtrl',function($scope, UserService){
+			$scope.user = UserService;
+			$scope.showData = function(){
+				$scope.user.gender = "Male"
+				console.log(UserService)
+			}
+		});
+	</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="RegCtrl">
+		<form>
+			Name: <input type="text" ng-model="name" />
+			Email: <input type="text" ng-model="email" />
+			Age: <input type="number" min="18" max="70" ng-model="age" />
+			<button ng-click="shareData()">Register</button>
+		</form>
+	</div>
+	<hr/>
+	<div ng-controller="MyAccountCtrl">
+		<h2>Shared data: {{user}}</h2>
+		<button ng-click="showData()">Check</button>
+	</div>
+</body>
+</html>

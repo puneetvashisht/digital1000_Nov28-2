@@ -2,6 +2,14 @@ Email: PuneetVashisht@gmail.com
 Github: https://github.com/puneetvashisht/digital1000_Nov28-2
 Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=sharing
 
+Download:
+	Brackets:
+		brackets.io
+	Node:
+		https://nodejs.org/en/
+	MongoDb:
+		https://www.mongodb.com/download-center?jmp=docs
+
 1. JavaScript
 	Browser - Chrome
 		You can write js in chrome
@@ -63,21 +71,8 @@ Drive: https://drive.google.com/drive/folders/0ByYjtCTdrTECS1JQQUdyRTdQM0k?usp=s
 				ng-controller="child"	
 					{{fn + ln}}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	Service/Factory
+	Filter
 	
 	
 	
