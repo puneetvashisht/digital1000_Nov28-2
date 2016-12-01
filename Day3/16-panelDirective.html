@@ -9,6 +9,7 @@
 			return {
 				templateUrl:"./template/16-panelTemp.html",
 				restrict: "E",
+				transclude: true,
 				scope:{
 					titleContent: '@title'
 				},
@@ -31,8 +32,8 @@
 	</script>
 </head>
 <body ng-app="app" ng-controller="ctrl">
-	<panel title="NodeJs"></panel>
-<!--	<panel title="AngularJs"></panel>-->
+	<panel title="NodeJs"><mark>NodeJs</mark> is javascript that runs on server side.</panel>
+	<panel title="AngularJs"><mark>AngularJs</mark> is javascript framework which increases the performance.</panel>
 </body>
 </html>
 

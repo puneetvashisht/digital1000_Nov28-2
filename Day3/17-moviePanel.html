@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Panel Directive Demo</title>
+	<link rel="stylesheet" href="./lib/bootstrap/bootstrap.min.css">
+	<script src="lib/angular/angular.min.js"></script>
+	<script>
+		var app = angular.module('app', []);
+		app.directive("movie", function(){
+			return {
+				restrict: 'E',
+				templateUrl:"./template/17-movieTemp.html",
+				scope: {
+					movieName: "@moviename"
+				},
+				transclude: true,
+				link: function(scope, element, attr){
+					element.bind('click', function(){
+						console.log("you clicked "+attr.moviename)
+//						console.log(attr)
+					})
+				}
+			}
+		})
+		app.controller("ctrl", function($scope){
+			$scope.movies = [
+				{
+					name:'Ring', imageSource:'./images/1.jpg'
+				},
+				{
+					name:'Pinocchio', imageSource:'./images/2.jpg'
+				}
+			]
+		});
+	</script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+<div >
+	<movie ng-repeat="movie in movies" moviename={{movie.name}}>
+		  	<img ng-src={{movie.imageSource}} />
+	</movie>
+</div>
+</body>
+</html>
+
