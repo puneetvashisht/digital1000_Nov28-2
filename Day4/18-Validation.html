@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Validation Basic</title>
+	<script src="lib/angular/angular.min.js"></script>
+	<style>
+		#username.ng-invalid{
+			background: red;
+			color: white;
+		}
+		#username.ng-valid{
+			background: darkseagreen;
+			color: blue;
+		}
+	</style>
+</head>
+<body ng-app>
+	<form name="myForm">
+		<input type="text" name="username" id="username" ng-model="username" required>
+	</form>
+	<hr/>
+<!--
+	<h2>Check validation with username</h2>
+	<h3>pristine: {{myForm.username.$pristine}}</h3>
+	<h3>dirty: {{myForm.username.$dirty}}</h3>
+	<h3>valid: {{myForm.username.$valid}}</h3>
+	<h3>invalid: {{myForm.username.$invalid}}</h3>
+-->
+</body>
+</html>
