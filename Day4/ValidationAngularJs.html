@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title> login Basic</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>  
+        <script>
+            var app= angular.module('app', []);
+            app.controller('loginCtrl',function($scope){
+				$scope.submit = function()
+					{
+						console.log($scope.user.pwd);
+					}
+			});
+            
+        </script>
+    </head>
+    <body ng-app="app" ng-controller="loginCtrl">
+        <form name="myForm">
+            <input type="text" name="username" ng-model="username" required>
+        </form> 
+        
+        
+        <form class="form-horizontal" name="login" ng-submit="submit()">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" ng-pattern ="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" class="form-control" id="inputEmail3" name="email" ng-model="user.email" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model ="user.pwd">
+    </div>
+      {{!login.pwd.$error.minlength}}
+      <P ng-show= "login.pwd.$error.minlength && !login.pwd.$pristine" class="text-danger" > min charcter required 5</P>
+      <p ng-show= "login.pwd.$error.minlength && !login.pwd.$pristine"  class="text-danger" > maximum charcted requied 10</p>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form>
+    </body>
+</html>
