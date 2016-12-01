@@ -88,3 +88,9 @@ Download:
 			element
 			attribute
 			class
+			
+	Bootstrap
+	More dynamic diractive
+	Validation
+	Ajax
+	Routing
