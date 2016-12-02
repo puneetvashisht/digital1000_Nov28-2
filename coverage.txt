@@ -108,6 +108,14 @@ Download:
 							express
 			package.json === pom.xml
 				npm init
+				
+				
+		1. express server required
+		2. server.listen port and host
+		3. server to handle req with method
+		4. dir('WebContent') for client code
+		
+		
 		mongobd
 		
 		
