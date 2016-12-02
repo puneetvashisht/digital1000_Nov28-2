@@ -108,6 +108,8 @@ Download:
 							express
 			package.json === pom.xml
 				npm init
+				npm install module_name --save
+				npm install --save module_name
 				
 				
 		1. express server required
@@ -117,6 +119,19 @@ Download:
 		
 		
 		mongobd
+			no-sql database
+			
+			create dir => data
+			command : mongod --dbpath dir_name
+			connection : mongo
+				npSql for more commands to
+					insert
+					delete
+					update
+					sort
+					find
+					
+			connection with express server
 		
 		
 		
