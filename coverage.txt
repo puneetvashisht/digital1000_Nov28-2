@@ -132,6 +132,28 @@ Download:
 					find
 					
 			connection with express server
+			
+			
+			
+Project Recap:
+	1. npm init (package.json)
+	2. npm install --save module1 module2 ....
+	3. if you have previous package.json
+		npm install
+	4. index.js
+		express
+			app.use(express.static(__dirname+"/public"))
+			app.listen(port, ip, function(){
+			
+				5. MongoClient.connect("mongodb://localhost:27017/dbname", function(err, db){
+				
+					app.get('/list', function(req, res){
+						db.collection("colName").find()toArray(function(err, data){
+						res.send(result: data)
+						})
+					})
+				})
+			})
 		
 		
 		

@@ -1,8 +1,14 @@
 var express = require('express');
 var Mongodb = require('mongodb');
+var bodyParser = require('body-parser');
 var MongoClient = Mongodb.MongoClient;
 var app = express();
-var col = 'PollCollecton';
+var col = 'PollCollection';
+
+app.use(express.static(__dirname+"/public"));
+app.use(bodyParser.json())
+
+
 
 app.listen(8888, "localhost", function(err){
 	if(err){
@@ -24,12 +30,38 @@ app.listen(8888, "localhost", function(err){
 			}
 			console.log("inserted")
 		})*/
-		db.collection(col).find().toArray(function(err, data){
+		/*db.collection(col).find().toArray(function(err, data){
 			if(err){
 				throw err;
 			}
 			console.log(data[0].emps);
+		})*/
+		
+		app.post('/create', function(req, res){
+			console.log(req.body)
+			db.collection(col).insert(req.body, function(err, data){
+				if(err){
+					res.send({success: false})
+//					throw err;
+					console.log(err)
+					console.log("some error occurred on server")
+				}
+				console.log('Poll inserted successfully')
+				res.send({success: true})
+			});
+		});
+		
+		app.get("/list", function(req, res){
+			db.collection(col).find().toArray(function(err, data){
+				if(err){
+					res.send({success: false, message: "some error occurred in fetching data"})
+				}
+				console.log(data);
+				res.send({success: true, pollList: data})
+			})
 		})
+
+		
 		
 	})
 })

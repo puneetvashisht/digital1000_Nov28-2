@@ -1,0 +1,25 @@
+<h1 class="text-info">Create new poll</h1>
+<hr/>
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Enter poll text" ng-model="poll.question">
+  </div>
+</form>
+ 
+ <form class="form-horizontal">
+  <div class="form-group" ng-repeat="choice in poll.choices">
+    <label class="col-sm-2 control-label">Choice {{$index+1}}</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="Enter choice" ng-model="choice.choice">
+    </div>
+  </div>
+  <!--<div class="form-group">
+    <label class="col-sm-2 control-label">Choice 2</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="Enter choice">
+    </div>
+  </div>-->
+  <button ng-click="addChoice()" class="btn btn-default">New Choice</button>
+</form>
+ 
+  <button type="button" ng-click="createPoll()" class="btn btn-success pull-right">Submit</button>
